@@ -7,7 +7,7 @@ double f(double x){
 	return pow(x,10)-1;
 }
 	int main(int argc, char *argv[]) {
-		double a=0, b=2, tol=1e-5, c=0, cv;
+		double a=0, b=2, tol=10e-5, c=0;
 		int count=0;
 		if(f(a)*f(b)>0){
 			printf("Cambie los valores de a o b");
@@ -15,7 +15,6 @@ double f(double x){
 		}
 		double error = 1;
 		do{
-			cv=c;
 			count++;
 			c=(a*f(b)-b*f(a))/(f(b)-f(a));
 			if(f(a)*f(c)>0){
@@ -27,8 +26,8 @@ double f(double x){
 				printf("\nInteraciones: %d ", count);
 				return 2;
 			}
-			error=abs(c-cv);
-		} while(error>tol);
+			error=(b-a)/2;
+		} while(error>tol && count<10000);
 		printf("La raiz es: %lf", c);
 		printf("\nEl error es: %lf", error);
 		printf("\nInteraciones: %d ", count);
