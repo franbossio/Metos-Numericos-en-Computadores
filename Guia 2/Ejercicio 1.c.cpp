@@ -2,15 +2,14 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define E 2.718281828
 
 using namespace std;
 double g(double x){
-	return pow(x,5)-3*pow(x,3)-2*pow(x,2)+2;
+	return pow(x,x-cos(x));
 }
 	int main(int argc, char *argv[]) {
-		double x_v=-1, error=1, x_n;
-		int tol=10e-12, iter=0;
+		double x_v=0, error=1, x_n, tol=10e-12;
+		int iter=0;
 		
 		do{
 			iter++;

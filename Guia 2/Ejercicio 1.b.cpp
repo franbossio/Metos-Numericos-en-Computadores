@@ -6,7 +6,7 @@
 
 using namespace std;
 double g(double x){
-	return pow(x,5)-3*pow(x,3)-2*pow(x,2)+2;
+	return cos(sin(x));
 }
 	int main(int argc, char *argv[]) {
 		double x_v=-1, error=1, x_n;
