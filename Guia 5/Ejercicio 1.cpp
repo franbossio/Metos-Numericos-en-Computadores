@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 {
 	FILE *fp;
 	char ch;
-	fp = fopen("datos.dat","r");
+	fp = fopen("ej1.txt","r");
 	if ( fp == NULL )
 	{
 		puts ( "No se puede abrir el archivo");
@@ -30,11 +30,11 @@ int main(int argc, char* argv[])
 	}
 	
 	printf("numero de filas=%i\n",filas);
-	
+	double m[filas][100];
 	//cerramos y reabrimos el archivo para resetear el puntero
 	fclose(fp);
-	fp = fopen("datos.dat","r");
-	double m[filas][100];
+	fp = fopen("ej1.txt","r");
+	
 	
 	
 	//Cargo los datos leidos en el array
@@ -60,4 +60,5 @@ int main(int argc, char* argv[])
 		}
 		printf("\n");
 	}
+	return 0;
 }
