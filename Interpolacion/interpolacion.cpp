@@ -57,7 +57,7 @@ void fileReader (double m[FILAS][2],int* filas){
 	
 	FILE *fp;
 	char c;
-	fp = fopen("data.txt","r");
+	fp = fopen("ej1.txt","r");
 	
 	if ( fp == NULL )
 	{
@@ -72,7 +72,7 @@ void fileReader (double m[FILAS][2],int* filas){
 	}
 	
 	fclose(fp);
-	fp = fopen("data.txt","r");
+	fp = fopen("ej1.txt","r");
 	
 	int i, j;
 	for(i = 0; i < fila; i++) {

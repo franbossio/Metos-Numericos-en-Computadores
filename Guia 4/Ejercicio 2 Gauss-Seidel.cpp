@@ -5,16 +5,16 @@
 using namespace std;
 
 
-void jacobi (double a[3][3] , double b[3], int filas);
-void gaussSeidel (double a[3][3] , double b[3], int filas);
-void relajacion (double a[3][3] , double b[3], int filas);
-bool diagonalmenteDominante(double a[3][3], int filas);
+void jacobi (double a[4][4] , double b[4], int filas);
+void gaussSeidel (double a[4][4] , double b[4], int filas);
+void relajacion (double a[4][4] , double b[4], int filas);
+bool diagonalmenteDominante(double a[4][4], int filas);
 
 
 int main(int argc, char* argv[])
 {
-	double a[3][3]={{3,1,1},{2,6,1},{1,1,4}};
-	double b[3]={5,9,6};
+	double a[4][4]={{5,7,6,5},{7,10,8,7},{6,8,10,9},{5,7,9,10}};
+	double b[4]={23,32,33,31};
 	int scanner;
 	printf("Seleccione:\n 1 --> Jacobi \n 2 --> Gauss Seidel \n 3 --> Gauss Seidel con Relajacion\n");
 	scanf("%d",&scanner);
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 
 }
 	
-void jacobi(double a[3][3] , double b[3] , int filas){
+void jacobi(double a[4][4] , double b[4] , int filas){
 	printf("\n\n***Ha seleccionado método de jacobi***\n\n");
 	
 	bool check = diagonalmenteDominante(a,filas);
@@ -95,7 +95,7 @@ void jacobi(double a[3][3] , double b[3] , int filas){
 	
 	printf("]\n La cantidad de iteraciones fueron: %d \n El error es de %lf", iteraciones, error);
 }
-void gaussSeidel (double a[3][3] , double b[3], int filas){
+void gaussSeidel (double a[4][4] , double b[4], int filas){
 	printf("\n\n***Ha seleccionado método de Gauss Seidel***\n\n");
 	
 	bool check = diagonalmenteDominante(a,filas);
@@ -165,7 +165,7 @@ void gaussSeidel (double a[3][3] , double b[3], int filas){
 	printf("]\n La cantidad de iteraciones fueron: %d \n El error es de %lf", iteraciones, error);
 }
 	
-void relajacion (double a[3][3] , double b[3], int filas){
+void relajacion (double a[4][4] , double b[4], int filas){
 	printf("\n\n***Ha seleccionado método de Gauss Seidel con Coeficiente de Relajacion***\n\n");
 	bool check = diagonalmenteDominante(a,filas);
 	if(!check)
@@ -239,7 +239,7 @@ void relajacion (double a[3][3] , double b[3], int filas){
 	printf("]\n La cantidad de iteraciones fueron: %d \n El error es de %lf", iteraciones, error);
 
 }
-bool diagonalmenteDominante(double a[3][3], int filas){
+bool diagonalmenteDominante(double a[4][4], int filas){
 	double suma = 0; 
 	int counter = 0;
 	for(int i = 0; i < filas ; i++){
