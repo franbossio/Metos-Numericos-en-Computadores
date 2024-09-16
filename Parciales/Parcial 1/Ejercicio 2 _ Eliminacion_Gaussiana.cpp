@@ -71,12 +71,9 @@ int main(int argc, char *argv[]) {
 		sum=sum/a[i][i];
 		x[i]=sum;
 	}
-	int c=0;
 	for(int i=0;i<100;i++){
-		c++;
 		printf("%.2lf\t", x[i]);
 	}
-	printf("%d", c);
 	return 0;
 }
 
