@@ -8,12 +8,12 @@ void gauss_pivot(double a[100][100],double b[100],double x[100],int p);
 int main(int argc, char *argv[]) {
 	double x[5]={0,1,1.5,3,5},y[5]={1.2,2.7,3.9,7.1,10},a[100][100],b[100],x1[10]={0};
 	int p, n=5;
+	printf("Ingresar el grado del polinomio: ");
+	scanf(" %d", &p);
 	if(n<p+1){
 		printf("no hay suficientes datos");
 		return 1;
 	}
-	printf("Ingresar el grado del polinomio: ");
-	scanf(" %d", &p);
 	double sumaxy, sumax;
 	for(int l=0;l<p+1;l++){
 		sumaxy=0;
