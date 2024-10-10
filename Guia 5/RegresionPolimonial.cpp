@@ -6,8 +6,8 @@ using namespace std;
 void gauss_pivot(double a[100][100],double b[100],double x[100],int p);
 
 int main(int argc, char *argv[]) {
-	double x[5]={0,1,1.5,3,5},y[5]={1.2,2.7,3.9,7.1,10},a[100][100],b[100],x1[10]={0};
-	int p, n=5;
+	double x[4]={0.5,0.8,1.3,2},y[4]={-0.716,-0.103,3.419,52.598},a[100][100],b[100],x1[10]={0};
+	int p, n=4;
 	printf("Ingresar el grado del polinomio: ");
 	scanf(" %d", &p);
 	if(n<p+1){
@@ -29,15 +29,17 @@ int main(int argc, char *argv[]) {
 			a[l][m]=sumax;
 		}
 	}
-	/*for(int i=0;i<2;i++){
+	printf("Matriz a: \n");
+	for(int i=0;i<2;i++){
 		for(int j=0;j<2;j++){
 			printf("%lf\t", a[i][j]);
 		}
 		printf("\n");
 	}
+	printf("Matriz b:\n");
 	for(int i=0;i<p+1;i++){
 		printf("%lf\t", b[i]);
-	}*/
+	}
 	gauss_pivot(a,b,x1,p);
 	return 0;
 }
