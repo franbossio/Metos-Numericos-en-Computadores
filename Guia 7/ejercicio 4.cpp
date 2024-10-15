@@ -14,10 +14,10 @@ int main(int argc, char *argv[]) {
 	int n, n2;
 	a=0;
 	b=1;
-	n=5;
+	n=10;
 	a2=0;
 	b2=PI/4;
-	n2=10;
+	n2=20;
 	//cambiar la funcion y los intervalos a mano
 	printf("Trapecio:\n");
 	trapecio(a2,b2,n);
@@ -41,11 +41,11 @@ void trapecio(double a, double b, int n){
 	
 	for(int i = 1 ;i <= n-1; i++){
 		x=a+i*h;
-		suma+=2*f(x);
+		suma+=2*f2(x);
 	}
 	suma=(h/2)*suma;
 		
-	printf("La integral es: %.2lf\n", suma);//suma=Iaprox
+	printf("La integral es: %lf\n", suma);//suma=Iaprox
 }
 void simpson(double a, double b, int n){
 	double x, suma;
@@ -61,6 +61,6 @@ void simpson(double a, double b, int n){
 	}
 	suma=(h/3)*(4*f2(x-h)+f2(a)+f2(b)+suma);
 	
-	printf("La integral es: %.2lf\n", suma);//suma=Iaprox
+	printf("La integral es: %lf\n", suma);//suma=Iaprox
 }
 	
