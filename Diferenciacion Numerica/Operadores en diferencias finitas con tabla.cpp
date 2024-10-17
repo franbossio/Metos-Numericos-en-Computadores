@@ -70,9 +70,9 @@ int main(int argc, char *argv[]) {
 			}
 			break;
 		case 2: 
-			if(x-2<=0){
+			if(x-2>=0){
 				derivada=(m[x][1]-2*m[x-1][1]+m[x-2][1])/pow(h,2);
-			}else if(x-3<=0){
+			}else if(x-3>=0){
 				derivada=(2*m[x][1]-5*m[x-1][1]+4*m[x-2][1]-m[x-3][1])/pow(h,2);
 			}else{
 				printf("No es posible hacer la derivada");
@@ -80,9 +80,9 @@ int main(int argc, char *argv[]) {
 			}
 			break;
 		case 3: 
-			if(x-3<=0){
+			if(x-3>=0){
 				derivada=(m[x][1]-3*m[x-1][1]+3*m[x-2][1]-m[x-3][1])/pow(h,3);
-			}else if(x-4<=0){
+			}else if(x-4>=0){
 				derivada=(5*m[x][1]-18*m[x-1][1]+24*m[x-2][1]-14*m[x-3][1]+3*m[x-4][1])/(2*pow(h,3));
 			}else{
 				printf("No es posible hacer la derivada");
@@ -90,9 +90,9 @@ int main(int argc, char *argv[]) {
 			}
 			break;
 		case 4: 
-			if(x-4<=0){
+			if(x-4>=0){
 				derivada=(m[x][1]-4*m[x-1][1]+6*m[x-2][1]-4*m[x-3][1]+m[x-4][1])/pow(h,4);
-			}else if(x-5<=0){
+			}else if(x-5>=0){
 				derivada=(3*m[x][1]-14*m[x-1][1]+26*m[x-2][1]-24*m[x-3][1]+11*m[x-4][1]-2*m[x-5][1])/pow(h,4);
 			}else{
 				printf("No es posible hacer la derivada");

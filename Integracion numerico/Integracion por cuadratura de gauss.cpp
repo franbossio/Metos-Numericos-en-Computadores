@@ -6,14 +6,15 @@ using namespace std;
 double f(double x);
 
 int main(int argc, char *argv[]) {
-	double a,b, c0,c1,c2,c3,c4,c5,x0,x1,x2,x3,x4,x5,I,Iexacta,error;
+	double a,b, c0,c1,c2,c3,c4,c5,x0,x1,x2,x3,x4,x5,I/*,Iexacta,error*/;
 	int puntos;
 	printf("Ingresar los limites de integracion: ");
 	scanf(" %lf", &a);
 	scanf(" %lf", &b);
 	
-	printf("Ingresar la integral exacta: ");
-	scanf(" %lf", &Iexacta);
+	//Ingresar la integral exacta si te la dan
+	/*printf("Ingresar la integral exacta: ");
+	scanf(" %lf", &Iexacta);*/
 	//calcular I
 	printf("Ingresar la cantidad de puntos a usar(entre 2 y 6): ");
 	scanf(" %d", &puntos);
@@ -78,13 +79,14 @@ int main(int argc, char *argv[]) {
 		printf("Los puntos ingresado no estan entre 2 y 6");
 		return 1;
 	}
-	error=abs(Iexacta-I);
+	//error=abs(Iexacta-I);
 	
 	printf("La integral es: %.2lf\n", I);//suma=Iaprox
-	printf("el error es: %.2lf", error);
+	//printf("el error es: %.2lf", error);
 	
 	return 0;
 }
 double f(double x){
+	//camia en cada problema
 	return x;
 }
