@@ -17,12 +17,12 @@ int main(int argc, char *argv[]) {
 	scanf(" %lf", &h);
 	//calcular la cantidad de intervalos
 	n=(int)(x_f-x_0)/h;
-	double x[100]={0},y[100]={0};
+	double x[200]={0},y[200]={0};
 	
 	//calcuar la solucion, tabla de datos
 	x[0]=x_0;
 	y[0]=y_0;
-	
+
 	for(int i = 0; i<=n; i++){
 		x[i+1]=x[i]+h;
 		y[i+1]=y[i]+h*f(x[i],y[i]);
@@ -39,5 +39,5 @@ int main(int argc, char *argv[]) {
 
 //dy/dx = f(x,y)
 double f(double x, double y){
-	return -2*x*y;
+	return (1+x)*sqrt(y);
 }
