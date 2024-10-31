@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <math.h> 
-#define FILAS 20
-#define COLUMNAS 20
+#define FILAS 100
+#define COLUMNAS 100
 using namespace std;
 
 
