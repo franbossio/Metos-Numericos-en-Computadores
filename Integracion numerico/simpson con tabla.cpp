@@ -8,11 +8,10 @@ int main(int argc, char *argv[]) {
 	float h;
 	double m[9][2] = {{0,0},{0.125,0.125},{0.25,0.25},{0.375,0.375},{0.5,0.5},{0.625,0.625},{0.75,0.75},{0.875,0.875},{1,1}};
 	int n=9-1;//filas - 1, cantidad de subintervalos
-	printf("Ingresar los limites de integracion: ");
-	scanf(" %lf", &a);
-	scanf(" %lf", &b);
-	printf("Ingresar la integral exacta: ");
-	scanf(" %lf", &Iexacta);
+	a=m[0][0];
+	b=m[n][0];
+	//printf("Ingresar la integral exacta: ");
+	//scanf(" %lf", &Iexacta);
 	
 	//Calcular I aproximado
 	h=(float)m[1][0]-m[0][0];
@@ -20,14 +19,14 @@ int main(int argc, char *argv[]) {
 	suma=0;
 	
 	for(int i = 1 ;i <= (n/2)-1; i++){
-		suma=suma+2*m[2*i][1]+4*m[i][1];
+		suma=suma+2*m[2*i][1]+4*m[2*i-1][1];
 	}
-	suma=(h/2)*suma;
+	suma=(h/3)*(4*m[n-1][1]+m[0][1]+m[n][1]+suma);
 	
-	error=abs(Iexacta-suma);
+	//error=abs(Iexacta-suma);
 	
 	printf("La integral es: %.2lf\n", suma);//suma=Iaprox
-	printf("el error es: %.2lf", error);
+	//printf("el error es: %.2lf", error);
 	
 	return 0;
 }
