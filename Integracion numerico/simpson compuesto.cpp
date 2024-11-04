@@ -18,8 +18,8 @@ int main(int argc, char *argv[]) {
 		printf("la cantidad de subintervalos es impar, ingrese otra cantindad: ");
 		scanf(" %d", &n);
 	}
-	printf("Ingresar la integral exacta: ");
-	scanf(" %lf", &Iexacta);
+	//printf("Ingresar la integral exacta: ");
+	//scanf(" %lf", &Iexacta);
 	
 	//Calcular I aproximado
 	h=(float)(b-a)/n;
@@ -30,16 +30,16 @@ int main(int argc, char *argv[]) {
 		x=a+2*i*h;
 		suma=suma+2*f(x)+4*f(x-h);
 	}
-	suma=(h/3)*(4*f(x-h)+f(a)+f(b)+suma);
+	suma=(h/3)*(4*f(b-h)+f(a)+f(b)+suma);
 	
 	//calcular el error
-	error=abs(Iexacta-suma);
+	//error=abs(Iexacta-suma);
 	
-	printf("La integral es: %.2lf\n", suma);//suma=Iaprox
-	printf("el error es: %.2lf", error);
+	printf("La integral es: %lf\n", suma);//suma=Iaprox
+	//printf("el error es: %.2lf", error);
 	
 	return 0;
 }
 double f(double x){
-	return x;
+	return ((exp(sqrt(1+x))*log(1+pow(x,2)))/(2*sqrt(1+x)))+(exp(sqrt(1+x))*2*x)/(1+pow(x,2));
 }

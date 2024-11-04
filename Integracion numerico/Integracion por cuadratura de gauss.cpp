@@ -81,12 +81,12 @@ int main(int argc, char *argv[]) {
 	}
 	//error=abs(Iexacta-I);
 	
-	printf("La integral es: %.2lf\n", I);//suma=Iaprox
+	printf("La integral es: %lf\n", I);//suma=Iaprox
 	//printf("el error es: %.2lf", error);
 	
 	return 0;
 }
 double f(double x){
 	//camia en cada problema
-	return x;
+	return ((exp(sqrt(1+x))*log(1+pow(x,2)))/(2*sqrt(1+x)))+(exp(sqrt(1+x))*2*x)/(1+pow(x,2));
 }

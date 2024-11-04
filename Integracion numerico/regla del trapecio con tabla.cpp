@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 	//Calcular I aproximado
 	h=(float)m[1][0]-m[0][0];
 	
-	suma=m[0][1] + m[6-1][1];//m[0][1](primer valor) + m[filas - 1][1](ultimo valor);
+	suma=m[0][1] + m[n][1];//m[0][1](primer valor) + m[filas - 1][1](ultimo valor);
 	
 	for(int i = 1 ;i <= n-1; i++){
 		suma+=2*m[i][1];
