@@ -23,15 +23,10 @@ int main(int argc, char *argv[]) {
 	x[0]=x_0;
 	y[0]=y_0;
 	
-	for(int i = 0; i<=n; i++){
+	for(int i = 0; i<n; i++){
 		x[i+1]=x[i]+h;
 		y[i+1]=y[i]+h*f(x[i],y[i]);
-	}
-	
-	//imprimir la solucion
-	printf("\tx\t|\ty\n---------------------------------------------\n");
-	for(int i=0;i<=n+1;i++){
-		printf("%lf\t|\t%lf\n", x[i], y[i]);
+		printf("\nX%d = %lf\nY%d = %lf",i+1, x[i+1],i+1, y[i+1]);
 	}
 	
 	return 0;

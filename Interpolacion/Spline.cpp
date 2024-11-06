@@ -24,7 +24,7 @@ void interpolacion (double m[FILAS][2], double x[FILAS], int filas);
 	
 	
 int main(int argc, char *argv[]) {
-	double m[4][2] = {{3,2.5},{4.5,1},{7,2.5},{9,0.5}}; 
+	double m[4][2] = {{-2,3},{-1,1},{1,2},{3,-1}}; 
 	int filas = 4; //poner aca la cantidad de filas de m. acordate que la cantidad de intervalos es filas-1
 	double a[FILAS][FILAS] = {{0}}; 
 	double b[FILAS] = {0};
