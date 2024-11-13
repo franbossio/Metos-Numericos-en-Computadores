@@ -3,10 +3,6 @@
 #define FILAS 20
 using namespace std;
 
-
-void fileReader (double m[FILAS][2], int* filas);
-
-
 void lagrange (double m[FILAS][2], int fila);	
 void polinomica (double [FILAS][2], int fila);
 
@@ -19,18 +15,15 @@ double determinante(double a[FILAS][FILAS], double b[FILAS], double x[FILAS], in
 
 double func (double x){
 	
-	return x + 2/x;
+	return 1+3*x;
 }
 
 	
 int main(int argc, char *argv[]) {
-	double m[FILAS][2];
-	int filas; 
-	fileReader(m,&filas);
+	//se cambia en cada ejercicio
+	double m[5][2]={{1,-0.148},{1.2,-0.040},{1.5,0.181},{1.75,0.419},{2,0.7}};
+	int filas=5; //se pone la cantidad de filas
 	int seleccion;
-	printf("\ncantidad de filas %d\n",filas);
-	printf("\nPuntos guardados: ");
-	printf("(X ; Y)\n\n");
 	for(int i = 0; i < filas ; i++){
 		printf("(%lf ; %lf)",m[i][0],m[i][1]);
 		printf("\n");
@@ -49,42 +42,6 @@ int main(int argc, char *argv[]) {
 		break;
 	}
 	return 0;
-}
-
-
-void fileReader (double m[FILAS][2],int* filas){
-	
-	
-	FILE *fp;
-	char c;
-	fp = fopen("ej1.txt","r");
-	
-	if ( fp == NULL )
-	{
-		printf("No se puede abrir el archivo");
-	}
-	int fila=0;
-	while((c = fgetc(fp)) != EOF)
-	{
-		if(c == '\n'){
-			fila++;
-		}
-	}
-	
-	fclose(fp);
-	fp = fopen("ej1.txt","r");
-	
-	int i, j;
-	for(i = 0; i < fila; i++) {
-		j = 0;
-		do {
-			fscanf(fp, "%lf", &(m[i][j]));
-			j++;
-		} while((c = fgetc(fp)) != '\n');
-	}
-	
-	*filas = fila;
-	
 }
 	
 void lagrange (double m[FILAS][2], int fila){

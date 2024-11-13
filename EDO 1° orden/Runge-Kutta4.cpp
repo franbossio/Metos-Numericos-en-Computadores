@@ -3,7 +3,7 @@
 using namespace std;
 
 double f(double x ,double y){//la forma que resuelve este metodo es ecuaciones de la forma: dy/dx = f(x,y) y necesitamos y(x0)= y0
-	return x*sqrt(y);		 // por ejemplo : dy/dx + 2xy = 0, donde tu f(xy) es -2xy
+	return (x*exp(pow(x,2)))/y;		 // por ejemplo : dy/dx + 2xy = 0, donde tu f(xy) es -2xy
 }
 	
 int main(int argc, char *argv[]) {

@@ -35,20 +35,17 @@ void PuntoFijo()
     {
 
         contador++;
-
-        if (fabs((g(xViejo + 0.01) - g(xViejo)) / 0.01) >= 1) // Derivada >= 1
+		xNuevo = g(xViejo);
+		
+        if (abs((g(xViejo + 0.01) - g(xViejo)) / 0.01) >1) // Derivada >1
         { 
-
             printf("\n\nNo cumple con el criterio de convergencia. El metodo diverge (|g'(x)|>1)");
             break;
         }
-        else
-        {
-
-            xNuevo = g(xViejo);
-            error = fabs(xNuevo - xViejo);
-            xViejo = xNuevo;
-        }
+		
+		error = fabs(xNuevo - xViejo);
+		xViejo = xNuevo;
+        
 
     } while (error > tolerancia);
 

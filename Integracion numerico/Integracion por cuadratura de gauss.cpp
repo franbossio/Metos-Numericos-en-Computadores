@@ -3,7 +3,7 @@
 using namespace std;
 
 double f(double x){ //ingresar la funcion
-	return 2*x*x*x;
+	return ((2*x)/(pow(x,2)+1))-cos(x);
 }
 	
 	int main(int argc, char *argv[]) {

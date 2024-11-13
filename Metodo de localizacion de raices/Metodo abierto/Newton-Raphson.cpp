@@ -26,19 +26,19 @@ void NewtonRaphson(){
     scanf("%lf", &xViejo);
     do{
         contador ++ ;
-        
-        if(fabs(fPrima(xViejo) < 1e-5)){
-            printf("\n********\nDERIVADA PEQUEÑA********\n");
+		xNuevo = xViejo - (f(xViejo)/fPrima(xViejo));
+        if(abs(fPrima(xNuevo)) < 1e-10){
+            printf("\n********\nDERIVADA GRANDE********\n");
             break;
-        } else{
-            xNuevo = xViejo - (f(xViejo)/fPrima(xViejo));
-            error = fabs(xNuevo - xViejo);
-            xViejo = xNuevo;
-        }
+        } 
+		
+		error = abs(xNuevo - xViejo);
+		xViejo = xNuevo;
+        
 
-    }while(error > tolerancia || contador < 10000 );
+    }while(error > tolerancia && contador < 10000 );
 
     printf("\n\n\nLa raiz de f es: %.10lf", xNuevo);
     printf("\nEl valor del error en la raiz es de: %.10lf", error);
-    printf("\nLa resolucion del proble tomó %d iteraciones", contador);
+    printf("\nLa resolucion del problema %d iteraciones", contador);
 }

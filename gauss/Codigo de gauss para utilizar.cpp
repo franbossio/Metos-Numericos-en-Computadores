@@ -8,16 +8,18 @@ int main(int argc, char *argv[]) {
 	int swap;
 	double a[3][3]={{4,-2,1},{-2,1,-1},{-2,3,6}};
 	double b[3]={2,-1,0}, factor, sum, x[3]={};
-	for(int i=0;i<2;i++){
-		for(int j=i+1;j<3;j++){
+	int filas=3;//poner la cantidad de filas
+	
+	for(int i=0;i<(filas-1);i++){
+		for(int j=i+1;j<filas;j++){
 			int p=i;
 			if(abs(a[i][i])<10e-5){
-				for(int l=i+1;l<3;l++){
+				for(int l=i+1;l<filas;l++){
 					if(abs(a[l][i])>abs(a[i][i])){
 						p=l;
 					}
 				}
-				for(int m=0;m<3;m++){
+				for(int m=0;m<filas;m++){
 					swap=a[p][m];
 					a[p][m]=a[i][m];
 					a[i][m]=swap;
@@ -27,24 +29,24 @@ int main(int argc, char *argv[]) {
 				b[i]=swap;
 			}
 			factor=-(a[j][i]/a[i][i]);
-			for(int k=i;k<3;k++){
+			for(int k=i;k<filas;k++){
 				a[j][k]=factor*a[i][k]+a[j][k];
 			}
 			b[j]=factor*b[i]+b[j];
 		}
 	}
 	int prod=1;
-	for(int i=0;i<3;i++){
+	for(int i=0;i<filas;i++){
 		prod=prod*a[i][i];
 	}
 	if(prod==0){
 		printf("No tiene solucion unica");
 		return 1;
 	}
-	x[2]=b[2]/a[2][2];
+	x[filas-1]=b[filas-1]/a[filas-1][filas-1];
 	for(int i=1;i>-1;i--){
 		sum=b[i];
-		for(int j=i+1;j<3;j++){
+		for(int j=i+1;j<filas;j++){
 			sum=sum-a[i][j]*x[j];
 		}
 		sum=sum/a[i][i];
@@ -56,7 +58,7 @@ int main(int argc, char *argv[]) {
 	}
 	printf("\n");
 	}*/
-	for(int i=0;i<3;i++){
+	for(int i=0;i<filas;i++){
 		printf("%lf\t", x[i]);
 	}
 	return 0;

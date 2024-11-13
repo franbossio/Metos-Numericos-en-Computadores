@@ -17,6 +17,7 @@ double funcion(double x) {
 }
 
 void biseccion() {
+	//cambiar a cada problema
     double a=0, b=1, tolerancia=10e-4;
     int iterator = 0;
 
