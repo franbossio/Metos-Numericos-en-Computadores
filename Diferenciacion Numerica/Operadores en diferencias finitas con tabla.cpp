@@ -25,6 +25,10 @@ int main(int argc, char *argv[]) {
 		switch(grado){
 		case 1:
 			derivada=(m[x+1][1]-m[x][1])/h;
+			if(x+2<=i){
+				derivada=(-m[x+2][1]+4*m[x+1][1]-3*m[x][1])/(2*h);
+				printf("Usaste 2 orden");
+			}
 			break;
 		case 2: 
 			if(x+2<=i){
@@ -62,6 +66,10 @@ int main(int argc, char *argv[]) {
 		switch(grado){
 		case 1:
 			derivada=(m[x][1]-m[x-1][1])/h;
+			if(x-2>=0){
+				derivada=(3*m[x][1]-4*m[x-1][1]+m[x-2][1])/(2*h);
+				printf("Usaste 2 orden");
+			}
 			break;
 		case 2: 
 			if(x-2>=0){
@@ -99,6 +107,10 @@ int main(int argc, char *argv[]) {
 		switch(grado){
 		case 1:
 			derivada=(m[x+1][1]-m[x-1][1])/(2*h);
+			if(x-2>=0 && x+2<=i){
+				derivada=(-m[x+2][1]+8*m[x+1][1]-8*m[x-1][1]+m[x-2][1])/(12*h);
+				printf("Usaste 2 orden");
+			}
 			break;
 		case 2: 
 			if(x-1>=0 && x+1<=i){

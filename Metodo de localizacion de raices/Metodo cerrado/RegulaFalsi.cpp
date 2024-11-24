@@ -14,7 +14,7 @@ int main() {
 
 double funcion(double x) {
 
-    return log(x) + exp(sin(x)) - x;
+    return log(pow(x,2)+1)-sin(x);
 
 }
 
@@ -22,13 +22,13 @@ void regulaFalsi() {
 
     double a, b, tolerancia, c, error;
     int contador = 0;
+	tolerancia=10e-10;
 
-    printf("Ingrese el límite inferior del intervalo: ");
+    printf("Ingrese el limite inferior del intervalo: ");
     scanf("%lf", &a);
-    printf("Ingrese el límite superior del intervalo: ");
+    printf("Ingrese el limite superior del intervalo: ");
     scanf("%lf", &b);
-    printf("Ingrese la tolerancia: ");
-    scanf("%lf", &tolerancia);
+    
 
         if (funcion(a) * funcion(b) < 0.0) {
             do {
@@ -47,14 +47,14 @@ void regulaFalsi() {
 
                 error = (b - a) / 2;
 
-            } while (error > tolerancia);
+            } while (error > tolerancia && contador < 5);
 
-            printf("\nResultado de la raíz: %.10lf", c);
+            printf("\nResultado de la raiz: %.10lf", c);
             printf("\nError estimado: %.10lf", error);
             printf("\nCantidad de iteraciones: %d\n", contador);
             
         } else {
-            printf("\nNo hay raíz o hay un número par de ellas\n");
+            printf("\nNo hay raiz o hay un numero par de ellas\n");
         }
     
 }
