@@ -24,7 +24,7 @@ double determinante(double a[FILAS][COLUMNAS], double b[FILAS], double x[FILAS],
 
 int main(int argc, char* argv[])
 {
-	double m[FILAS][COLUMNAS];
+	double m[4][3]={{3,1,1,5},{2,6,1,9},{1,1,4,6}}
 	double a[FILAS][COLUMNAS];
 	double b[FILAS];
 	int filas = 0, columnas = 0;
@@ -39,40 +39,6 @@ int main(int argc, char* argv[])
 }
 
 
-void fileReader (double m[FILAS][COLUMNAS],int* filas, int* columnas){
-
-	FILE *fp;
-	char c;
-	fp = fopen("data.txt","r");
-	if ( fp == NULL )
-	{
-		printf("No se puede abrir el archivo");
-	}
-	int fila=0;
-	int columna;
-	while((c = fgetc(fp)) != EOF)
-	{
-		if(c == '\n'){
-			fila++;
-		}
-	}
-	
-	fclose(fp);
-	fp = fopen("data.txt","r");
-	
-	int i, j;
-	for(i = 0; i < fila; i++) {
-		j = 0;
-		do {
-			fscanf(fp, "%lf", &(m[i][j]));
-			j++;
-		} while((c = fgetc(fp)) != '\n');
-	}
-	columna = j;
-	*columnas = columna;
-	*filas = fila;
-	
-}
 void matrizA (double a[FILAS][COLUMNAS],double m[FILAS][COLUMNAS], int filas, int columnas){
 	for(int i = 0 ; i < filas ; i++){
 		for (int j = 0 ; j < columnas - 1 ; j++){
