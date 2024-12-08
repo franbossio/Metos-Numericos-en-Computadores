@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	
-	double m[3][2]={{0,1},{1,3},{2,0}},x,suma, prod;
+	double m[3][2]={{0,0.5},{0.5,0.83},{1,1.35}},x,suma, prod;
 	int n=3-1;//filas - 1
 	printf("Introducir el valor a interpolar: ");
 	scanf(" %lf", &x);

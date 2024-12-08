@@ -41,5 +41,5 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 double f(double x){
-	return ((exp(sqrt(1+x))*log(1+pow(x,2)))/(2*sqrt(1+x)))+(exp(sqrt(1+x))*2*x)/(1+pow(x,2));
+	return (4*pow(x,2)+2)*exp(pow(x,2));
 }

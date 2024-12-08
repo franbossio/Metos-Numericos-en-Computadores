@@ -21,7 +21,7 @@ double func (double x){
 	
 int main(int argc, char *argv[]) {
 	//se cambia en cada ejercicio
-	double m[3][2]={{0,1},{60,4},{100,10}};
+	double m[3][2]={{0,0.5},{0.5,0.83},{1,1.35}};
 	int filas=3; //se pone la cantidad de filas
 	int seleccion;
 	for(int i = 0; i < filas ; i++){

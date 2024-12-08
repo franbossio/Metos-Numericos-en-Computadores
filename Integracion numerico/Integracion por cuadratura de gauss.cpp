@@ -3,7 +3,7 @@
 using namespace std;
 
 double f(double x){ //ingresar la funcion
-	return ((2*x)/(pow(x,2)+1))-cos(x);
+	return exp(pow(x,2));
 }
 	
 	int main(int argc, char *argv[]) {
@@ -79,6 +79,6 @@ double f(double x){ //ingresar la funcion
 			break;
 		}
 		
-		printf("\nEl valor de la integral entre a=%lf y b=%lf es de: I=%lf",a,b,integral);
+		printf("\nEl valor de la integral entre a=%lf y b=%lf es de: I=%.10lf",a,b,integral);
 		return 0;
 	}

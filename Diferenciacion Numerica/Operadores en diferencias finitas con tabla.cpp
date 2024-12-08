@@ -5,9 +5,9 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	//tabla de datos ya escrita(cambia en cada problema)
-	double m[5][2]={{1,-0.1483},{1.25,-0.008416},{1.5,0.181126},{1.75,0.41747},{2,0.7001}};
+	double m[9][2]={{0,1},{0.25,1.384},{0.5,1.849},{0.75,2.417},{1,3.118},{1.25,3.99},{1.5,5.082},{1.75,6.527503},{2,8.183}};
 	double h, derivada;
-	int operador, grado, i=4,x;//filas - 1(el i se cambia en cada problema);
+	int operador, grado, i=8,x;//filas - 1(el i se cambia en cada problema);
 	h=m[1][0]-m[0][0];
 	printf("Elige el operador en direncias finitas:");
 	printf("\n1.Hacia adelante(no valido para el ultimo elemento)");
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 	scanf(" %d", &grado);
 	
 	//ingreso el valor de la posicion del numero a derivar, esto es independiente a cada problema
-	x=4; //m[3][0]
+	x=8; //m[3][0]
 
 	switch(operador){
 	case 1:
