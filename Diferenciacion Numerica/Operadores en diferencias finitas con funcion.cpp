@@ -1,9 +1,14 @@
 #include <iostream>
-#include <math.h> 
+#include <math.h>
 #include <stdlib.h>
 using namespace std;
-//declarar funcion
-double f(double x);
+
+// ==================== CAMBIAR EN CADA EJERCICIO ====================
+// Unica parte que hay que tocar a mano: la funcion a derivar.
+double f(double x){
+	return pow(x,4);
+}
+// =====================================================================
 
 int main(int argc, char *argv[]) {
 	double h, derivada,x;
@@ -20,20 +25,20 @@ int main(int argc, char *argv[]) {
 	scanf(" %d", &operador);
 	printf("\nElige el grado de derivada(hasta 4): ");
 	scanf(" %d", &grado);
-	
+
 	switch(operador){
 	case 1:
 		switch(grado){
 		case 1:
 			derivada=(-f(x+2*h)+4*f(x+h)-3*f(x))/(2*h);
 			break;
-		case 2: 
+		case 2:
 			derivada=(-f(x+3*h)+4*f(x+2*h)-5*f(x+h)+2*f(x))/pow(h,2);
 			break;
-		case 3: 
+		case 3:
 			derivada=(-3*f(x+4*h)+14*f(x+3*h)-24*f(x+2*h)+18*f(x+h)-5*f(x))/(2*pow(h,3));
 			break;
-		case 4: 
+		case 4:
 			derivada=(-2*f(x+5*h)+11*f(x+4*h)-24*f(x+3*h)+26*f(x+2*h)-14*f(x+h)+3*f(x))/pow(h,4);
 			break;
 		}
@@ -43,41 +48,37 @@ int main(int argc, char *argv[]) {
 		case 1:
 			derivada=(3*f(x)-4*f(x-h)+f(x-2*h))/(2*h);
 			break;
-		case 2: 
+		case 2:
 			derivada=(2*f(x)-5*f(x-h)+4*f(x-2*h)-f(x-3*h))/pow(h,2);
 			break;
-		case 3: 
+		case 3:
 			derivada=(5*f(x)-18*f(x-h)+24*f(x-2*h)-14*f(x-3*h)+3*f(x-4*h))/(2*pow(h,3));
 			break;
-		case 4: 
+		case 4:
 			derivada=(3*f(x)-14*f(x-h)+26*f(x-2*h)-24*f(x-3*h)+11*f(x-4*h)-2*f(x-5*h))/pow(h,4);
 			break;
 		}
 		break;
-	case 3: 
+	case 3:
 		switch(grado){
 		case 1:
 			derivada=(-f(x+2*h)+8*f(x+h)-8*f(x-h)+f(x-2*h))/(12*h);
 			break;
-		case 2: 
+		case 2:
 			derivada=(-f(x+2*h)+16*f(x+h)-30*f(x)+16*f(x-h)-f(x-2*h))/(12*pow(h,2));
 			break;
-		case 3: 
+		case 3:
 			derivada=(-f(x+3*h)+8*f(x+2*h)-13*f(x+h)+13*f(x-h)-8*f(x-2*h)+f(x-3*h))/(8*pow(h,3));
 			break;
-		case 4: 
-			derivada=(-f(x+3*h)+12*f(x+2*h)+39*f(x+h)+56*f(x)-39*f(x-h)+12*f(x-2*h)+f(x-3*h))/(6*pow(h,4));
+		case 4:
+			derivada=(-f(x+3*h)+12*f(x+2*h)-39*f(x+h)+56*f(x)-39*f(x-h)+12*f(x-2*h)-f(x-3*h))/(6*pow(h,4));
 			break;
 		}
 		break;
-	default: 
+	default:
 		printf("La opcion ingresada no esta disponible");
 		return 1;
 	}
 	printf("La derivada de grado %d en el punto x=%.2lf es: %.2lf", grado, x, derivada);
 	return 0;
-}
-
-double f(double x){
-	return pow(x,4);
 }

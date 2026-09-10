@@ -1,36 +1,47 @@
 #include <iostream>
-#include <math.h> 
+#include <math.h>
 #include <stdlib.h>
+#define FILAS 100
 using namespace std;
 
 int main(int argc, char *argv[]) {
 	double a,b, suma, Iexacta, error;
-	float h;
-	double m[6][2] = {{0,0},{0.2,0.2},{0.4,0.4},{0.6,0.6},{0.8,0.8},{1,1}};
-	int n=6-1;//filas - 1, cantidad de subintervalos
-	printf("Ingresar los limites de integracion: ");
-	scanf(" %lf", &a);
-	scanf(" %lf", &b);
+	double h;
+	double m[FILAS][2];
+	int filas, n;
+
+	printf("Ingresar la cantidad de puntos de la tabla: ");
+	scanf("%d", &filas);
+	if (filas < 2 || filas > FILAS) {
+		printf("\nCantidad de puntos invalida (debe ser entre 2 y %d).\n", FILAS);
+		return 1;
+	}
+	printf("Ingresar los %d puntos (formato por punto: x y), con paso constante:\n", filas);
+	for (int i = 0; i < filas; i++) {
+		scanf("%lf %lf", &m[i][0], &m[i][1]);
+	}
+	n = filas - 1; //cantidad de subintervalos
+
 	printf("Ingresar la integral exacta: ");
 	scanf(" %lf", &Iexacta);
-	
+
+	a = m[0][0];
+	b = m[n][0];
+
 	//Calcular I aproximado
-	h=(float)m[1][0]-m[0][0];
-	
+	h = m[1][0]-m[0][0];
+
 	suma=m[0][1] + m[n][1];//m[0][1](primer valor) + m[filas - 1][1](ultimo valor);
-	
+
 	for(int i = 1 ;i <= n-1; i++){
 		suma+=2*m[i][1];
 	}
 	suma=(h/2)*suma;
-	
-	error=abs(Iexacta-suma);
-	
-	printf("La integral es: %.2lf\n", suma);//suma=Iaprox
+
+	error=fabs(Iexacta-suma);
+
+	printf("\nLa integral entre a=%lf y b=%lf es: %.2lf\n", a, b, suma);//suma=Iaprox
 	printf("el error es: %.2lf", error);
-	
+
 	return 0;
 }
-
-	
-

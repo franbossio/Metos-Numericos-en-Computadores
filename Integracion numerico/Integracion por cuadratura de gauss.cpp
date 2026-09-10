@@ -2,9 +2,12 @@
 #include <math.h>
 using namespace std;
 
-double f(double x){ //ingresar la funcion
+// ==================== CAMBIAR EN CADA EJERCICIO ====================
+// Unica parte que hay que tocar a mano: la funcion a integrar.
+double f(double x){
 	return exp(pow(x,2));
 }
+// =====================================================================
 	
 	int main(int argc, char *argv[]) {
 		int cantidad_puntos;
